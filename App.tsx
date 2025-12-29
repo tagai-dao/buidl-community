@@ -1,20 +1,28 @@
-import React, { useState } from 'react';
+import React, { Suspense } from 'react';
+import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
 import { SketchyButton } from './components/SketchyButton';
 import { SketchyCard } from './components/SketchyCard';
 import { NetworkGraph } from './components/NetworkGraph';
-import { FundPage } from './components/FundPage';
-import { ActingNowPage } from './components/ActingNowPage';
-import { ActivityPage } from './components/ActivityPage';
-import { BuyEarnPage } from './components/BuyEarnPage';
-import { DocsPage } from './components/DocsPage';
 import { EventsSection } from './components/EventsSection';
 
-export default function App() {
-  const [page, setPage] = useState('home');
+// 懒加载页面组件
+const FundPage = React.lazy(() => import('./components/FundPage').then(module => ({ default: module.FundPage })));
+const ActingNowPage = React.lazy(() => import('./components/ActingNowPage').then(module => ({ default: module.ActingNowPage })));
+const ActivityPage = React.lazy(() => import('./components/ActivityPage').then(module => ({ default: module.ActivityPage })));
+const BuyEarnPage = React.lazy(() => import('./components/BuyEarnPage').then(module => ({ default: module.BuyEarnPage })));
+const DocsPage = React.lazy(() => import('./components/DocsPage').then(module => ({ default: module.DocsPage })));
 
-  const HomePage = () => (
-    <>
-      {/* Hero Text Section */}
+// 加载中的占位组件
+const LoadingFallback = () => (
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="text-2xl font-bold">Loading...</div>
+  </div>
+);
+
+// 首页组件
+const HomePage = () => (
+  <>
+    {/* Hero Text Section */}
       <section className="max-w-7xl mx-auto px-6 pt-12 pb-12 md:pt-24 md:pb-20 text-center">
         <div className="space-y-8 max-w-4xl mx-auto">
           <h1 className="text-6xl md:text-8xl font-bold leading-[0.9]">
@@ -122,95 +130,102 @@ export default function App() {
         </div>
       </section>
 
-      <EventsSection />
-    </>
-  );
+    <EventsSection />
+  </>
+);
 
-  const renderContent = () => {
-    switch (page) {
-      case 'fund': return <FundPage />;
-      case 'activity': return <ActivityPage />;
-      case 'actingNow': return <ActingNowPage />;
-      case 'buyEarn': return <BuyEarnPage />;
-      case 'docs': return <DocsPage />;
-      default: return <HomePage />;
-    }
-  };
-
+// 导航组件（需要访问路由信息）
+const Navigation = () => {
+  const location = useLocation();
+  
+  // 判断当前路由是否激活
+  const isActive = (path: string) => location.pathname === path;
+  
   return (
-    <div className="min-h-screen font-hand text-buidl-black selection:bg-buidl-pink selection:text-buidl-black">
-      
-      {/* Navigation */}
-      <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
-        <div 
-          className="text-4xl font-bold tracking-tighter cursor-pointer border-2 border-transparent hover:border-black/10 p-1 rounded-lg transition-all" 
-          onClick={() => setPage('home')}
+    <nav className="flex items-center justify-between px-8 py-6 max-w-7xl mx-auto">
+      <Link 
+        to="/"
+        className="text-4xl font-bold tracking-tighter cursor-pointer border-2 border-transparent hover:border-black/10 p-1 rounded-lg transition-all"
+      >
+        BUIDL Community
+      </Link>
+      <div className="hidden md:flex gap-8 text-xl font-bold items-center">
+        <Link 
+          to="/foundation"
+          className={`transition-colors hover:text-buidl-pink ${isActive('/foundation') ? 'text-buidl-pink underline' : ''}`}
         >
-          BUIDL Community
-        </div>
-        <div className="hidden md:flex gap-8 text-xl font-bold items-center">
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setPage('fund'); }} 
-            className={`transition-colors hover:text-buidl-pink ${page === 'fund' ? 'text-buidl-pink underline' : ''}`}
-          >
-            Foundation
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setPage('activity'); }} 
-            className={`transition-colors hover:text-purple-500 ${page === 'activity' ? 'text-purple-500 underline' : ''}`}
-          >
-            Activity
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setPage('actingNow'); }} 
-            className={`transition-colors hover:text-purple-500 ${page === 'actingNow' ? 'text-purple-500 underline' : ''}`}
-          >
-            Acting now
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setPage('buyEarn'); }} 
-            className={`transition-colors hover:text-purple-500 ${page === 'buyEarn' ? 'text-purple-600 border-2 border-purple-500 px-2 py-1 rounded' : ''}`}
-          >
-            Buy & Earn
-          </a>
-          <a 
-            href="#" 
-            onClick={(e) => { e.preventDefault(); setPage('docs'); }} 
-            className={`transition-colors hover:text-purple-500 ${page === 'docs' ? 'text-purple-600 border-2 border-purple-500 px-2 py-1 rounded' : ''}`}
-          >
-            Docs
-          </a>
-        </div>
-        <SketchyButton className="hidden md:block text-base px-6 py-2">
-          Join Us
-        </SketchyButton>
-      </nav>
+          Foundation
+        </Link>
+        <Link 
+          to="/activity"
+          className={`transition-colors hover:text-purple-500 ${isActive('/activity') ? 'text-purple-500 underline' : ''}`}
+        >
+          Activity
+        </Link>
+        <Link 
+          to="/acting-now"
+          className={`transition-colors hover:text-purple-500 ${isActive('/acting-now') ? 'text-purple-500 underline' : ''}`}
+        >
+          Acting now
+        </Link>
+        <Link 
+          to="/buy-earn"
+          className={`transition-colors hover:text-purple-500 ${isActive('/buy-earn') ? 'text-purple-600 border-2 border-purple-500 px-2 py-1 rounded' : ''}`}
+        >
+          Buy & Earn
+        </Link>
+        <Link 
+          to="/docs"
+          className={`transition-colors hover:text-purple-500 ${isActive('/docs') ? 'text-purple-600 border-2 border-purple-500 px-2 py-1 rounded' : ''}`}
+        >
+          Docs
+        </Link>
+      </div>
+      <SketchyButton className="hidden md:block text-base px-6 py-2">
+        Join Us
+      </SketchyButton>
+    </nav>
+  );
+};
 
-      <main>
-        {renderContent()}
-      </main>
+// 主应用组件
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen font-hand text-buidl-black selection:bg-buidl-pink selection:text-buidl-black">
+        <Navigation />
+        
+        <main>
+          <Suspense fallback={<LoadingFallback />}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/foundation" element={<FundPage />} />
+              <Route path="/activity" element={<ActivityPage />} />
+              <Route path="/acting-now" element={<ActingNowPage />} />
+              <Route path="/buy-earn" element={<BuyEarnPage />} />
+              <Route path="/docs" element={<DocsPage />} />
+            </Routes>
+          </Suspense>
+        </main>
 
-      {/* Footer */}
-      <footer className="border-t-4 border-black mt-20 pt-12 pb-12 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-          <div className="text-center md:text-left">
-            <h4 className="text-3xl font-bold mb-2">BUIDL Community</h4>
-            <p className="text-lg text-gray-600">Built for the sovereign future.</p>
+        {/* Footer */}
+        <footer className="border-t-4 border-black mt-20 pt-12 pb-12 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+            <div className="text-center md:text-left">
+              <h4 className="text-3xl font-bold mb-2">BUIDL Community</h4>
+              <p className="text-lg text-gray-600">Built for the sovereign future.</p>
+            </div>
+            <div className="flex gap-6 text-xl font-bold">
+              <a href="#" className="hover:text-buidl-pink transition-colors">Twitter</a>
+              <a href="#" className="hover:text-buidl-pink transition-colors">Telegram</a>
+              <a href="#" className="hover:text-buidl-pink transition-colors">Discord</a>
+            </div>
+            <div className="text-gray-500">
+              &copy; 2024 BUIDL Community
+            </div>
           </div>
-          <div className="flex gap-6 text-xl font-bold">
-            <a href="#" className="hover:text-buidl-pink transition-colors">Twitter</a>
-            <a href="#" className="hover:text-buidl-pink transition-colors">Telegram</a>
-            <a href="#" className="hover:text-buidl-pink transition-colors">Discord</a>
-          </div>
-          <div className="text-gray-500">
-            &copy; 2024 BUIDL Community
-          </div>
-        </div>
-      </footer>
-    </div>
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
