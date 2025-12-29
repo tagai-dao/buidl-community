@@ -116,12 +116,25 @@ export const ActingNowPage: React.FC = () => {
                 </div>
 
                 {/* Card 3: TagAI BD Co-building */}
-                <div className="border-2 border-black rounded-[40px] p-6 bg-white flex flex-col items-center">
-                    <div className="w-full aspect-[4/5] bg-white border-2 border-black rounded-[30px] flex items-center justify-center mb-8 relative overflow-hidden">
-                        <div className="absolute inset-4 border-2 border-black/5 rounded-[25px] border-dashed"></div>
-                        <span className="text-4xl text-gray-300 font-bold italic">image</span>
+                <div 
+                    className="border-2 border-black rounded-[40px] p-6 bg-white flex flex-col items-center cursor-pointer hover:shadow-sketch transition-all group"
+                    onClick={() => handleRedirect("https://www.notion.so/coincidencelabs/TagAI-BD-DAO-2d8d086d364c806f9b40d9a99a0498d1?source=copy_link")}
+                >
+                    <div className="w-full aspect-[4/5] bg-white border-2 border-black rounded-[30px] flex items-center justify-center mb-8 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                        <img 
+                            src="/tagai-bd-cobuilding.png" 
+                            alt="TagAI BD Co-building" 
+                            className="w-full h-full object-cover"
+                        />
                     </div>
-                    <SketchyButton className="w-full text-xl py-3" variant="primary">
+                    <SketchyButton 
+                        className="w-full text-xl py-3" 
+                        variant="primary"
+                        onClick={(e) => {
+                            e.stopPropagation();
+                            handleRedirect("https://www.notion.so/coincidencelabs/TagAI-BD-DAO-2d8d086d364c806f9b40d9a99a0498d1?source=copy_link");
+                        }}
+                    >
                         TagAI BD Co-building
                     </SketchyButton>
                 </div>

@@ -9,26 +9,44 @@ export const ActivityPage: React.FC = () => {
             <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
                 {/* Community Forum Card */}
                 <div className="flex flex-col items-center">
-                    <div className="w-full aspect-[16/10] bg-white border-2 border-black rounded-[40px] flex items-center justify-center text-3xl text-gray-400 font-bold mb-8 overflow-hidden relative group cursor-pointer hover:shadow-sketch transition-all">
-                        <div className="absolute inset-0 bg-gray-50 opacity-50"></div>
-                        <span className="relative z-10">Image</span>
-                        <div className="absolute inset-0 border-4 border-black/5 m-4 rounded-[30px] border-dashed"></div>
-                    </div>
-                    <SketchyButton className="px-12 py-3 text-2xl min-w-[300px]" variant="primary">
-                        Community Forum
-                    </SketchyButton>
+                    <a 
+                        href="https://tagai.fun/tag-detail/BUIDL" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full aspect-[16/10] bg-white border-2 border-black rounded-[40px] overflow-hidden relative group cursor-pointer hover:shadow-sketch transition-all mb-8"
+                    >
+                        <img 
+                            src="/community-forum.png" 
+                            alt="Community Forum" 
+                            className="w-full h-full object-cover"
+                        />
+                    </a>
+                    <a href="https://tagai.fun/tag-detail/BUIDL" target="_blank" rel="noopener noreferrer">
+                        <SketchyButton className="px-12 py-3 text-2xl min-w-[300px]" variant="primary">
+                            Community Forum
+                        </SketchyButton>
+                    </a>
                 </div>
 
                 {/* Community Activity Card */}
                 <div className="flex flex-col items-center">
-                    <div className="w-full aspect-[16/10] bg-white border-2 border-black rounded-[40px] flex items-center justify-center text-3xl text-gray-400 font-bold mb-8 overflow-hidden relative group cursor-pointer hover:shadow-sketch transition-all">
-                        <div className="absolute inset-0 bg-gray-50 opacity-50"></div>
-                        <span className="relative z-10">Image</span>
-                        <div className="absolute inset-0 border-4 border-black/5 m-4 rounded-[30px] border-dashed"></div>
-                    </div>
-                    <SketchyButton className="px-12 py-3 text-2xl min-w-[300px]" variant="primary">
-                        Community Activity
-                    </SketchyButton>
+                    <a 
+                        href="https://www.notion.so/coincidencelabs/278d086d364c81c59107eab2dafa9b12?source=copy_link" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="w-full aspect-[16/10] bg-white border-2 border-black rounded-[40px] overflow-hidden relative group cursor-pointer hover:shadow-sketch transition-all mb-8"
+                    >
+                        <img 
+                            src="/community-activity.png" 
+                            alt="Community Activity" 
+                            className="w-full h-full object-cover"
+                        />
+                    </a>
+                    <a href="https://www.notion.so/coincidencelabs/278d086d364c81c59107eab2dafa9b12?source=copy_link" target="_blank" rel="noopener noreferrer">
+                        <SketchyButton className="px-12 py-3 text-2xl min-w-[300px]" variant="primary">
+                            Community Activity
+                        </SketchyButton>
+                    </a>
                 </div>
             </section>
 

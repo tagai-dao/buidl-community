@@ -13,7 +13,13 @@ export const FundPage: React.FC = () => {
                         <li>① Rotates every 6 months.</li>
                         <li>② Nodes holding more than 500,000 $BUIDL are eligible to run for election.</li>
                     </ul>
-                    <SketchyButton className="mt-6 w-full text-base">Become a node</SketchyButton>
+                    <a 
+                        href="https://tagai.fun/tag-detail/BUIDL" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                    >
+                        <SketchyButton className="mt-6 w-full text-base">Become a node</SketchyButton>
+                    </a>
                 </SketchyCard>
                 
                 <SketchyCard>
@@ -40,23 +46,40 @@ export const FundPage: React.FC = () => {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                     {/* Main Featured Proposal */}
                     <div className="md:col-span-2 border-2 border-black rounded-[30px] p-4 flex flex-col items-center">
-                        <div className="w-full aspect-video bg-gray-50 border-2 border-black rounded-[25px] flex items-center justify-center text-4xl text-gray-300 font-bold mb-6 overflow-hidden">
-                            <div className="relative w-full h-full flex items-center justify-center">
-                                <span className="z-10">Image</span>
-                                <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#000_1px,transparent_1px)] [background-size:20px_20px]"></div>
-                            </div>
-                        </div>
-                        <SketchyButton className="px-12 py-3 text-lg" variant="primary">
-                            BUIDL Café Investment Proposal
-                        </SketchyButton>
+                        <a 
+                            href="https://snapshot.box/#/s:buidlbnb.eth/proposal/0xc327481af9c99e8ffc36384601471d2c64b429c0e1f2ac0aaeef93ae364c7282" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="w-full aspect-video bg-gray-50 border-2 border-black rounded-[25px] flex items-center justify-center mb-6 overflow-hidden relative group cursor-pointer hover:shadow-sketch transition-all"
+                        >
+                            <img 
+                                src="/buidl-cafe-investment-proposal.png" 
+                                alt="BUIDL Café Investment Proposal" 
+                                className="w-full h-full object-cover"
+                            />
+                        </a>
+                        <a 
+                            href="https://snapshot.box/#/s:buidlbnb.eth/proposal/0xc327481af9c99e8ffc36384601471d2c64b429c0e1f2ac0aaeef93ae364c7282" 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                        >
+                            <SketchyButton className="px-12 py-3 text-lg" variant="primary">
+                                BUIDL Café Investment Proposal
+                            </SketchyButton>
+                        </a>
                     </div>
 
                     {/* More Placeholder */}
-                    <div className="border-2 border-black rounded-[30px] p-4 flex items-center justify-center bg-white min-h-[300px]">
-                        <div className="text-4xl font-bold text-buidl-black/80">
+                    <a 
+                        href="https://snapshot.box/#/s:buidlbnb.eth" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="border-2 border-black rounded-[30px] p-4 flex items-center justify-center bg-white min-h-[300px] cursor-pointer hover:shadow-sketch transition-all group"
+                    >
+                        <div className="text-4xl font-bold text-buidl-black/80 group-hover:text-buidl-black transition-colors">
                             More...
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>

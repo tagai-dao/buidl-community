@@ -168,12 +168,25 @@ export const BuyEarnPage: React.FC = () => {
             </div>
 
             {/* Card 4: TagAI BD */}
-            <div className="border-2 border-black rounded-[35px] p-5 flex flex-col items-center group">
-              <div className="w-full aspect-[4/5] bg-white border-2 border-black rounded-[30px] flex items-center justify-center p-6 mb-6 relative overflow-hidden">
-                <div className="absolute inset-2 border-2 border-black/5 rounded-[25px] border-dashed"></div>
-                <span className="text-3xl text-gray-300 font-bold italic relative z-10">image</span>
+            <div 
+              onClick={() => handleRedirect("https://www.notion.so/coincidencelabs/TagAI-BD-DAO-2d8d086d364c806f9b40d9a99a0498d1?source=copy_link")}
+              className="border-2 border-black rounded-[35px] p-5 flex flex-col items-center group cursor-pointer hover:shadow-sketch transition-all"
+            >
+              <div className="w-full aspect-[4/5] bg-white border-2 border-black rounded-[30px] flex items-center justify-center mb-6 relative overflow-hidden group-hover:scale-[1.02] transition-transform">
+                <img 
+                  src="/tagai-bd-cobuilding.png" 
+                  alt="TagAI BD Co-building" 
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <SketchyButton className="w-full py-2 text-lg" variant="primary">
+              <SketchyButton 
+                className="w-full py-2 text-lg" 
+                variant="primary"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleRedirect("https://www.notion.so/coincidencelabs/TagAI-BD-DAO-2d8d086d364c806f9b40d9a99a0498d1?source=copy_link");
+                }}
+              >
                 TagAI BD Co-building
               </SketchyButton>
             </div>
