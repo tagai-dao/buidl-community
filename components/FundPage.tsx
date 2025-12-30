@@ -89,7 +89,7 @@ export const FundPage: React.FC = () => {
         <section className="max-w-7xl mx-auto px-6 py-20">
             <div className="text-center mb-20">
                 <h1 className="text-5xl md:text-7xl font-bold relative inline-block">
-                    Our Fund - 255,000,000 $BUIDL
+                    Our Fund - 105,000,000 $BUIDL
                     <svg className="absolute w-full h-4 -bottom-4 left-0 text-buidl-pink" viewBox="0 0 100 10" preserveAspectRatio="none">
                         <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
                     </svg>

@@ -38,8 +38,20 @@ const HomePage = () => (
             A community of sovereign individuals, built to support sovereign individuals and digital nomads.
           </p>
           <div className="flex flex-wrap gap-4 pt-4 justify-center">
-            <SketchyButton>on-chain community</SketchyButton>
-            <SketchyButton variant="secondary">Submit a proposal</SketchyButton>
+            <a 
+              href="https://tagai.fun/tag-detail/BUIDL" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <SketchyButton>on-chain community</SketchyButton>
+            </a>
+            <a 
+              href="https://snapshot.box/#/s:buidlbnb.eth" 
+              target="_blank" 
+              rel="noopener noreferrer"
+            >
+              <SketchyButton variant="secondary">Submit a proposal</SketchyButton>
+            </a>
           </div>
         </div>
       </section>
@@ -63,18 +75,6 @@ const HomePage = () => (
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <SketchyCard className="group hover:-rotate-1 transition-transform">
-            <div className="h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-black/10">
-              <span className="text-6xl">🤖</span>
-            </div>
-            <h3 className="text-3xl font-bold mb-2">TagAI</h3>
-            <p className="text-xl text-gray-600 mb-4">A community layer powered by AI and prediction markets.</p>
-            <div className="flex gap-2">
-              <span className="px-3 py-1 bg-buidl-pink/30 rounded-full text-sm font-bold border border-black/20">AI</span>
-              <span className="px-3 py-1 bg-blue-100 rounded-full text-sm font-bold border border-black/20">Tool</span>
-            </div>
-          </SketchyCard>
-
           <SketchyCard className="group hover:rotate-1 transition-transform">
             <div className="h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-black/10">
               <span className="text-6xl">☕</span>
@@ -84,6 +84,18 @@ const HomePage = () => (
             <div className="flex gap-2">
               <span className="px-3 py-1 bg-amber-100 rounded-full text-sm font-bold border border-black/20">SaaS</span>
               <span className="px-3 py-1 bg-green-100 rounded-full text-sm font-bold border border-black/20">RWAs</span>
+            </div>
+          </SketchyCard>
+
+          <SketchyCard className="group hover:-rotate-1 transition-transform">
+            <div className="h-48 bg-gray-100 rounded-lg mb-4 flex items-center justify-center border border-black/10">
+              <span className="text-6xl">🤖</span>
+            </div>
+            <h3 className="text-3xl font-bold mb-2">TagAI</h3>
+            <p className="text-xl text-gray-600 mb-4">A community layer powered by AI and prediction markets.</p>
+            <div className="flex gap-2">
+              <span className="px-3 py-1 bg-buidl-pink/30 rounded-full text-sm font-bold border border-black/20">AI</span>
+              <span className="px-3 py-1 bg-blue-100 rounded-full text-sm font-bold border border-black/20">Tool</span>
             </div>
           </SketchyCard>
 
@@ -114,7 +126,7 @@ const HomePage = () => (
 
             <div className="flex-1 w-full grid grid-cols-2 gap-6">
               <div className="bg-gray-800 p-6 rounded-2xl border-2 border-gray-600 border-dashed text-center">
-                <div className="text-4xl md:text-5xl font-bold text-white mb-2">200,000,000 $BUIDL</div>
+                <div className="text-4xl md:text-5xl font-bold text-white mb-2">105,000,000 $BUIDL</div>
                 <div className="text-gray-400 text-lg">DAO Fund</div>
               </div>
               <div className="bg-gray-800 p-6 rounded-2xl border-2 border-gray-600 border-dashed text-center">
@@ -154,7 +166,7 @@ const Navigation = () => {
           to="/foundation"
           className={`transition-colors hover:text-buidl-pink ${isActive('/foundation') ? 'text-buidl-pink underline' : ''}`}
         >
-          Foundation
+          Fund
         </Link>
         <Link 
           to="/activity"
