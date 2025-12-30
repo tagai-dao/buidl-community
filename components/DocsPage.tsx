@@ -156,7 +156,7 @@ export const DocsPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12">
       <div className="border-2 border-black rounded-[50px] p-8 md:p-12 bg-white">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
           {docsItems.map((doc, index) => (

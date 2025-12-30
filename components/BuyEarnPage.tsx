@@ -77,10 +77,10 @@ export const BuyEarnPage: React.FC = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-6 py-12 space-y-24">
+    <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 space-y-12 md:space-y-24">
       {/* Buy Section */}
       <section className="relative">
-        <div className="border-2 border-black rounded-[50px] p-12 bg-white flex flex-col md:flex-row items-center justify-between gap-12">
+        <div className="border-2 border-black rounded-[30px] md:rounded-[50px] p-6 md:p-12 bg-white flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
           {/* Buy Card */}
           <div className="flex-1 w-full max-w-2xl">
             <div 
@@ -112,11 +112,11 @@ export const BuyEarnPage: React.FC = () => {
       {/* Earn Section */}
       <section className="space-y-12">
         <div className="text-center">
-          <h2 className="text-4xl md:text-5xl font-bold">Earn with BUIDL Community</h2>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold">Earn with BUIDL Community</h2>
         </div>
 
-        <div className="border-2 border-black rounded-[50px] p-8 bg-white">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="border-2 border-black rounded-[30px] md:rounded-[50px] p-4 md:p-8 bg-white">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {/* Card 1: Post */}
             <div className="border-2 border-black rounded-[35px] p-5 flex flex-col items-center group">
               <div className="w-full aspect-[4/5] bg-white border-2 border-black rounded-[30px] flex items-center justify-center p-6 mb-6 relative overflow-hidden">

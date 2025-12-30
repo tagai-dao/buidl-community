@@ -4,9 +4,9 @@ import { SketchyCard } from './SketchyCard';
 
 export const ActivityPage: React.FC = () => {
     return (
-        <div className="max-w-7xl mx-auto px-6 py-12 space-y-24">
+        <div className="max-w-7xl mx-auto px-4 md:px-6 py-8 md:py-12 space-y-12 md:space-y-24">
             {/* Community Activity/Forum Section */}
-            <section className="grid grid-cols-1 md:grid-cols-2 gap-12">
+            <section className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
                 {/* Community Forum Card */}
                 <div className="flex flex-col items-center">
                     <a 
@@ -53,7 +53,7 @@ export const ActivityPage: React.FC = () => {
             {/* Community Space Map Section */}
             <section className="space-y-12">
                 <div className="text-center">
-                    <h2 className="text-5xl font-bold">Community Space Map</h2>
+                    <h2 className="text-3xl md:text-5xl font-bold">Community Space Map</h2>
                 </div>
                 
                 <div className="relative w-full aspect-[21/9] min-h-[500px] border-2 border-black rounded-[50px] bg-gray-50 overflow-hidden flex items-center justify-center p-8">

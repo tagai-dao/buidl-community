@@ -4,9 +4,9 @@ import { SketchyCard } from './SketchyCard';
 
 export const FundPage: React.FC = () => {
     const MultisigView = () => (
-        <div className="mb-24">
-            <h2 className="text-center text-4xl font-bold mb-12 underline decoration-dashed underline-offset-8">9-member multisig group</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="mb-12 md:mb-24">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12 underline decoration-dashed underline-offset-8">9-member multisig group</h2>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                 <SketchyCard className="flex flex-col">
                     <h3 className="text-2xl font-bold mb-4">Rotation of multisig nodes</h3>
                     <ul className="space-y-3 text-lg flex-grow">
@@ -41,9 +41,9 @@ export const FundPage: React.FC = () => {
 
     const ProposalView = () => (
         <div>
-            <h2 className="text-center text-4xl font-bold mb-12 underline decoration-dashed underline-offset-8">Proposal voting system</h2>
-            <div className="border-2 border-black rounded-[40px] p-8 bg-white shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <h2 className="text-center text-2xl md:text-3xl lg:text-4xl font-bold mb-8 md:mb-12 underline decoration-dashed underline-offset-8">Proposal voting system</h2>
+            <div className="border-2 border-black rounded-[30px] md:rounded-[40px] p-4 md:p-8 bg-white shadow-sm">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8">
                     {/* Main Featured Proposal */}
                     <div className="md:col-span-2 border-2 border-black rounded-[30px] p-4 flex flex-col items-center">
                         <a 
@@ -86,9 +86,9 @@ export const FundPage: React.FC = () => {
     );
 
     return (
-        <section className="max-w-7xl mx-auto px-6 py-20">
-            <div className="text-center mb-20">
-                <h1 className="text-5xl md:text-7xl font-bold relative inline-block">
+        <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20">
+            <div className="text-center mb-12 md:mb-20">
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold relative inline-block px-2">
                     Our Fund - 105,000,000 $BUIDL
                     <svg className="absolute w-full h-4 -bottom-4 left-0 text-buidl-pink" viewBox="0 0 100 10" preserveAspectRatio="none">
                         <path d="M0 5 Q 50 10 100 5" stroke="currentColor" strokeWidth="8" fill="none" />
