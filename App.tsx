@@ -202,9 +202,15 @@ const Navigation = () => {
       </div>
       
       {/* 桌面端按钮 */}
-      <SketchyButton className="hidden md:block text-base px-6 py-2">
-        Join Us
-      </SketchyButton>
+      <a 
+        href="https://t.me/+Io5Wn6EPdiA5ZGJl" 
+        target="_blank" 
+        rel="noopener noreferrer"
+      >
+        <SketchyButton className="hidden md:block text-base px-6 py-2">
+          Join Us
+        </SketchyButton>
+      </a>
       
       {/* 移动端汉堡菜单按钮 */}
       <button
@@ -319,9 +325,16 @@ const Navigation = () => {
               </div>
               
               <div className="pt-6 border-t-2 border-black">
-                <SketchyButton className="w-full text-base px-6 py-3">
-                  Join Us
-                </SketchyButton>
+                <a 
+                  href="https://t.me/+Io5Wn6EPdiA5ZGJl" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  onClick={closeMobileMenu}
+                >
+                  <SketchyButton className="w-full text-base px-6 py-3">
+                    Join Us
+                  </SketchyButton>
+                </a>
               </div>
             </div>
           </div>
