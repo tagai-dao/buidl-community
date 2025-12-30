@@ -28,7 +28,7 @@ const graphData: GraphData = {
     { id: 'Andy', label: 'Andy', tag: 'TagAI' },
     { id: 'DAVID', label: 'DAVID' },
     { id: 'AmyTang', label: 'AmyTang', tag: 'Wellness Community' },
-    { id: 'Amos', label: 'Amos', tag: 'Zhangfei Beef' },
+    { id: 'Amos', label: 'Amos', tag: 'Community Observer' },
     { id: 'Jiang', label: 'Jiang', tag: 'Co-Work' },
     { id: 'quyang', label: 'quyang', tag: 'Vibe Coding' },
     { id: 'JieBai', label: 'JieBai', tag: 'WuDAO' },
